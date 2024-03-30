@@ -45,7 +45,7 @@ class ffmpeg(object):
  async def mp4(filepath):
   try:
    output = filepath + '.mp4'
-   cmd = f"""ffmpeg -i "{dl}" -vf subtitles="watermark.ass" {ffmpegcode[0]} "{out}" -y"""
+   cmd = f'ffmpeg -loglevel error -i  "{filepath}" -map 0:a -map 0:v -c:a copy -c:v copy "{output}" -y'
    process = await asyncio.create_subprocess_shell(
     cmd,
     stdout=asyncio.subprocess.PIPE,
@@ -60,7 +60,7 @@ class ffmpeg(object):
  async def mkv(filepath): ##OFCOZ COPY PAsTE @NIRUSAKI Bed BOy HEEHEEE
   try:
    output = filepath + '.mkv'
-   cmd = f"""ffmpeg -i "{dl}" -vf subtitles="watermark.ass" {ffmpegcode[0]} "{out}" -y"""
+   cmd = f'ffmpeg -i  "{filepath}" -c copy "{output}" -y'
    process = await asyncio.create_subprocess_shell(
     cmd,
     stdout=asyncio.subprocess.PIPE,
@@ -72,7 +72,7 @@ class ffmpeg(object):
    return output
   except Exception as e:
    LOGS.info(e)
-   return None  
+   return None
   
      
 class functions(object):
