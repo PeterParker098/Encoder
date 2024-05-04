@@ -34,7 +34,7 @@ async def help_message(bot, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Jᴏin Fiᴇrᴄᴇnᴇᴛwᴏrᴋ', url='https://t.me/Fiercenetwork')
+                    InlineKeyboardButton('Jᴏin Fiᴇrᴄᴇnᴇᴛwᴏrᴋ', url='https://t.me/AnimeKurrollu')
                 ]
             ]
         ),
